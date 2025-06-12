@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='vars.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+      
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <title>Ledgerfy</title>
+</head>
+
+<body>
+  <div class="login-initial">
+    <div class="image">
+      <img class="image2" src="{{ url_for('static', filename='assets/image1.png') }}" />
+    </div>
+    <div class="lbl-inf">
+      Se você já tem um cadastro, você pode fazer o login usando seu email e senha
+    </div>
+    <form method="POST">
+      <div class="lbl-login">Login</div>
+      <div class="txtb-email"><!-- Input email -->
+        <input type="text" name="usuario" class="campo-email"></input>
+      </div>
+      <div class="txtb-password"><!-- Input Senha -->
+        <input type="password" name="senha" class="campo-email"></input>
+      </div>
+      <div class="btn-forget-pass">
+        <div class="forget-fundo"></div>
+        <div class="lbl-forget">Esqueci minha senha</div>
+      </div>
+      <div class="btn-enter"><!-- Botao enter -->
+        <button type="submit" id="enter-login" class="enter-fundo">Entrar</button>
+      </div>
+    </form>
+  <div class="lbl-email">Email</div>
+  <div class="lbl-password">Senha</div>
+  <a href="www.ledgerfy.com/login/cadastro" class="lbl-sign-in">Se cadastre aqui</a><!-- Hyperlink -->
+  <div class="lbl-no-account">
+    <span>
+      <span class="lbl-no-account-span">Não tem uma conta?</span>
+      <span class="lbl-no-account-span2"></span>
+    </span>
+  </div>
+  <div class="lbl-logged">Me mantenha logado</div>
+  <div class="btn-logged">
+    <button id="btn-check"></button>
+  </div>
+  {% if error %}
+    <div class="error-login">{{ error }}uygvuyv</div>
+  {% endif %}
+  </div>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
